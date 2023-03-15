@@ -9,7 +9,9 @@
 <body>
 
     <ul id="app">
-        <li v-for="todo in todos" :style= "todo.done ? textDecor : {}">{{todo.text}}</li>
+        <li v-for="(todo, ind) in todos" :style= "todo.done ? textDecor : {}">{{todo.text}} 
+            <span @click="cancellaItem(ind)">x</span>
+        </li>
     </ul>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
