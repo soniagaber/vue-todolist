@@ -20,14 +20,26 @@ const { createApp } = Vue
             done:false
         }
         ],
-        textDecor:"text-decoration-line: line-through"
+        textDecor:"text-decoration-line: line-through",
+        newOb: {
+          text:' ',
+          done: false
+        }
       }
     },
 
     methods:{
         cancellaItem(index){
             this.todos.splice(index, 1);
-        }
+        },
+
+        addTodo() {
+            this.todos.push(this.newOb);
+            this.newOb={
+              text:' ',
+              done: false
+            }
+        },
     }
 
   }).mount('#app')

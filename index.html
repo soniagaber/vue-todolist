@@ -7,14 +7,21 @@
     <title>Vue To Do List</title>
 </head>
 <body>
-
-    <ul id="app">
-        <li v-for="(todo, ind) in todos" :style= "todo.done ? textDecor : {}">{{todo.text}} 
-            <span @click="cancellaItem(ind)">x</span>
-        </li>
-    </ul>
-
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <div id="app">
+        <ul>
+            <li v-for="(todo, ind) in todos" :style= "todo.done ? textDecor : {}">{{todo.text}} 
+                <span @click="cancellaItem(ind)">x</span>
+            </li>
+        </ul>
+    
+        <input id="input" type="text" v-model="newOb.text">
+        <button @click="addTodo()">aggiungi</button>
+    </div>
+    
+
+    
     <script src="js/script.js"></script>
 </body>
 </html>
